@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+
+header nav {
+    background-color: #f95b21eb;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+header nav input {
+    padding: 5px;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+
+
+.sobre-nos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.sobre-nos .container {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.imagem-perfil {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f1f1;
+    padding: 20px;
+}
+
+.imagem-perfil img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.texto {
+    flex: 2;
+    padding: 20px;
+}
+
+.texto h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.texto p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+
+footer {
+    text-align: center;
+    background-color: #222;
+    color: #fff;
+    padding: 10px;
+}
+
+button {
+    padding: 12px;
+    background-color: #f5ba18;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #f39c12;
+}
+
+footer {
+    text-align: center;
+    background-color: #222;
+    color: #fff;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    font-size: 1rem;
+    margin: 5px 0;
+}

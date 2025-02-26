@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Author" content="Maria Clara e Elizabete">
+    <meta name="description" content="Lojinha online para venda de Mangás e Acessórios">
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+    <title>Lojinha Geek - Roupas e Acessórios</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="img/Lojinha Geek do Will (1).png" alt="Logo da Loja" class="logo">
+            <a href="index.html">Home</a>
+            <a href="mangas.html">Mangás</a> 
+            <a href="roupas.html">Roupas e Acessórios</a>
+            <div class="cadastro"> 
+                <button class="navbar"><a href="cadastro.html">Cadastre-se</a></button>
+            </div>
+            <input type="search" id="barra-pesquisa" placeholder="Pesquisar" oninput="filtrarProdutos()">
+        </nav>
+    </header> 
+    
+    <h1>Roupas e Acessórios</h1>
+    
+    <section id="produtos" class="vitrine">
+        <div class="produto" data-nome="Roupa para Cosplay Gojo Satoru">
+            <fieldset>
+                <img src="img/cosplay gojo.webp" alt="Roupa para Cosplay Gojo Satoru">
+                <h2>Roupa para Cosplay Gojo Satoru</h2>
+                <p>R$159,00</p>
+                <button class="adicionar" data-nome="Roupa para Cosplay Gojo Satoru" data-preco="159.00">Adicionar ao carrinho</button>
+            </fieldset>
+        </div>
+            
+        <div class="produto" data-nome="Par De Brincos Demon Slayer">
+            <fieldset>
+                <img src="img/Par De Brincos Demon Slayer.jpg" alt="Par De Brincos Demon Slayer">
+                <h2>Par De Brincos Demon Slayer</h2>
+                <p>R$28,99</p>
+                <button class="adicionar" data-nome="Par De Brincos Demon Slayer" data-preco="28.99">Adicionar ao carrinho</button>
+            </fieldset>
+        </div>
+
+        <div class="produto" data-nome="Camiseta Anime Attack On Titan">
+            <fieldset>
+                <img src="img/camisa aot.webp" alt="Camiseta Anime Attack On Titan">
+                <h2>Camiseta Anime Attack On Titan</h2>
+                <p>R$38,67</p>
+                <button class="adicionar" data-nome="Camiseta Anime Attack On Titan" data-preco="38.67">Adicionar ao carrinho</button>
+            </fieldset>
+        </div>
+
+        <div class="produto" data-nome="Camiseta Anime Dandadan">
+            <fieldset>
+                <img src="img/dandadan-removebg-preview.png" alt="Camiseta Anime Dandadan">
+                <h2>Camiseta Anime Dandadan</h2>
+                <p>R$44,99</p>
+                <button class="adicionar" data-nome="Camiseta Anime Dandadan" data-preco="44.99">Adicionar ao carrinho</button>
+            </fieldset>
+        </div>
+    </section>
+
+    <section>
+        <h1>Carrinho de Compras</h1>
+        <div id="carrinho"></div>
+        <ul id="lista-carrinho"></ul> 
+        <p>Total: R$ <span id="total">0.00</span></p>
+        <button id="limpar-carrinho">Limpar Carrinho</button> 
+        <button id="finalizar-compra">Finalizar Compras</button> 
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const botoesAdicionar = document.querySelectorAll(".adicionar");
+            const listaCarrinho = document.getElementById("lista-carrinho");
+            const totalElemento = document.getElementById("total");
+            const botaoLimpar = document.getElementById("limpar-carrinho");
+            const botaoFinalizarCompra = document.getElementById("finalizar-compra");
+            let total = 0;
+
+            
+            botoesAdicionar.forEach(botao => {
+                botao.addEventListener("click", () => {
+                    const nome = botao.getAttribute("data-nome");
+                    const preco = parseFloat(botao.getAttribute("data-preco"));
+
+                    
+                    const item = document.createElement("li");
+                    item.textContent = `${nome} - R$ ${preco.toFixed(2)}`;
+                    listaCarrinho.appendChild(item);
+
+                   
+                    total += preco;
+                    totalElemento.textContent = total.toFixed(2);
+                });
+            });
+
+            
+            botaoLimpar.addEventListener("click", () => {
+                listaCarrinho.innerHTML = "";
+                total = 0;
+                totalElemento.textContent = "0.00";
+            });
+
+            
+            botaoFinalizarCompra.addEventListener("click", () => {
+                if (total > 0) {
+                    alert(`Compra finalizada! Total a pagar: R$ ${total.toFixed(2)}`);
+                    listaCarrinho.innerHTML = "";
+                    total = 0;
+                    totalElemento.textContent = "0.00";
+                } else {
+                    alert("Seu carrinho está vazio. Adicione itens para finalizar a compra.");
+                }
+            });
+        });
+    </script>
+
+    <footer>
+        <p>&copy; 2025 Lojinha Geek - Criado com carinho por Elizabete e Maria Clara. Todos os direitos reservados.</p>
+        <p>Desenvolvido especialmente para fãs de mangás e animes. Obrigado por apoiar nossa loja!</p>
+    </footer>
+</body>
+</html>

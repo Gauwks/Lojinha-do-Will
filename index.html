@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Author" content="Maria Clara e Elizabete">
     <meta name="description" content="Lojinha online para venda de Mangás e Acessórios">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-mang.css">
+    <script src="index.js"></script>
+    <title>Lojinha do Will</title>
 </head>
 <body>
     <header>
@@ -13,85 +15,159 @@
             <img src="img/Lojinha Geek do Will (1).png" alt="Logo da Loja" class="logo">
             <a href="index.html">Home</a>
             <a href="mangas.html">Mangás</a> 
-            <a href="roupaseace.html">Roupas e Acessórios</a>
+            <a href="roupas.html">Roupas e Acessórios</a>
             <div class="cadastro"> 
-            <button class="navbar"><a href="cadastro.html">Cadastre-se</a></button>
+                <button class="navbar"><a href="carrinho.html">Carrinho</a></button>
+                <button class="navbar"><a href="cadastro.html">Cadastre-se</a></button>
             </div>
-            <input type="search" placeholder="Pesquisar">
+            <input type="search" id="barra-pesquisa" placeholder="Pesquisar" oninput="filtrarProdutos()">
         </nav>
-    </header>
-       <h1>Mais Vendidos</h1>
+    </header> 
+
+    <h1>Mangás</h1>
+
     <section id="produtos" class="vitrine">
-        <div class="produto1">
-        <fieldset>
-            <img src="img/bersek.jpg" alt="Bersek Vol.1">
-            <h2>Bersek Vol.1</h2>
-            <p>R$ 26,18</p>
-            <button>Comprar</button>
-        </div>
-        </fieldset>
-        <div class="produto2">
+      
+        <div class="produto" data-nome="Jujutsu Kaisen Vol. 1" data-preco="34.75">
             <fieldset>
-            <img src="img/quadro itachi.jpg" alt="Kit 3 Quadro Decorativo Sasuke Narutos Uzumaki Akatsuki Anime">
-            <h2>Kit 3 Quadros Decorativos Itachi</h2>
-            <p>R$ 48,90</p>
-            <button>Comprar</button>
-        </div>
-    </fieldset>
-        <div class="produto3">
-        <fieldset> 
-            <img src="img/demon slayer.jpg" alt="Demon Slayer  Vol. 8">
-            <h2> Demon Slayer Vol.8</h2>
-            <p>R$ 24,72</p>
-            <button>Comprar</button>
-        </div>
-        </fieldset>
-        <div class="produto4">
-            <fieldset> 
-                <img src="img/blue lock.jpg" alt="Blue Lock Vol.25">
-                <h2>Blue Lock Vol.25</h2>
-                <p>R$ 35,90</p>
-                <button>Comprar</button>
-            </div>
+                <img src="img/61ResbP4aPL._SY385_.jpg" alt="Jujutsu Kaisen Vol.1">
+                <h2>Jujutsu Kaisen Vol. 1</h2>
+                <p> R$34,75</p>
+                <button class="adicionar">Adicionar ao carrinho</button>
             </fieldset>
-    </section>
-    <section id="produtos" class="vitrine">
-            <div class="produto1">
-                <fieldset>
-                    <img src="img/quadro gojo.png" alt="Quadro Gojo – Jujutsu Kaisen">
-                    <h2>Quadro Gojo – Jujutsu Kaisen</h2>
-                    <p>R$29,90</p>
-                    <button>Comprar</button>
-                </div>
-                </fieldset>
-                <div class="produto">
-                    <fieldset>
-                    <img src="img/cosplay gojo.webp" alt="Roupa para Cosplay Gojo Satoru">
-                    <h2>Roupa para Cosplay Gojo Satoru </h2>
-                    <p>R$  R$159,00</p>
-                    <button>Comprar</button>
-                </div>
-            </fieldset>
-                <div class="produto3">
-                <fieldset> 
-                    <img src="img/Par De Brincos Demon Slayer.jpg" alt="Par De Brincos Demon Slayer">
-                    <h2> Par De Brincos Demon Slayer</h2>
-                    <p>R$ 28,99</p>
-                    <button>Comprar</button>
-                </fieldset>
-                </div>
-                
-                <div class="produto4">
-                    <fieldset> 
-                        <img src="img/camisa aot.webp" alt="Camiseta Anime Attack On Titan">
-                        <h2>Camiseta Anime Attack On Titan</h2>
-                        <p>R$ 38,67</p>
-                        <button>Comprar</button>
-                    </div>
-                    </fieldset>
-    </section>
-    <footer>
+        </div>
+
         
+        <div class="produto" data-nome="O cara que estou a fim não é um cara?! - Vol.1" data-preco="30.70">
+            <fieldset>
+                <img src="img/o cara.jpg" alt="O cara que estou a fim não é um cara?! - Volume 1" style="width: 65px;">
+                <h2>O cara que estou a fim não é um cara?! - Vol.1</h2>
+                <p>R$30,70</p>
+                <button class="adicionar">Adicionar ao carrinho</button>
+            </fieldset>
+        </div>
+
+        
+        <div class="produto" data-nome="Your name" data-preco="42.50">
+            <fieldset> 
+                <img src="img/yourname.jpg" alt="Your name">
+                <h2> Your Name</h2>
+                <p>R$42,50</p>
+                <button class="adicionar">Adicionar ao carrinho</button>
+            </fieldset>
+        </div>
+
+        
+        <div class="produto" data-nome="Box: Attack on Titan Season 1" data-preco="261.40">
+            <fieldset> 
+                <img src="img/aot.jpg" alt="Box: Attack on Titan Season 1">
+                <h2>Box: Attack on Titan Season 1</h2>
+                <p>R$261,40</p>
+                <button class="adicionar">Adicionar ao carrinho</button>
+            </fieldset>
+        </div>
+    </section>
+
+    <section id="produtos" class="vitrine">
+       
+        <div class="produto" data-nome="Demon Slayer Vol.8" data-preco="24.72">
+            <fieldset>
+                <img src="img/demon slayer.jpg" alt="Demon Slayer Vol. 8">
+                <h2> Demon Slayer Vol.8</h2>
+                <p>R$ 24,72</p>
+                <button class="adicionar">Adicionar ao carrinho</button>
+            </fieldset>
+        </div>
+
+        
+        <div class="produto" data-nome="Boku no Hero - Volume 2" data-preco="25.43">
+            <fieldset>
+                <img src="img/boku.jpg" alt="Boku no Hero - Volume 2">
+                <h2>Boku no Hero - Volume 2 </h2>
+                <p>R$25,43</p>
+                <button class="adicionar">Adicionar ao carrinho</button>
+            </fieldset>
+        </div>
+
+        
+        <div class="produto" data-nome="Hunter X Hunter - Vol. 1" data-preco="35.10">
+            <fieldset> 
+                <img src="img/Hunter X Hunter - Vol. 1.jpg" alt="Hunter X Hunter - Vol. 1">
+                <h2>Hunter X Hunter - Vol. 1</h2>
+                <p>R$35,10</p>
+                <button class="adicionar">Adicionar ao carrinho</button>
+            </fieldset>
+        </div>
+
+       
+        <div class="produto" data-nome="Tokyo Revengers Vol. 1" data-preco="20.34">
+            <fieldset> 
+                <img src="img/Tokyo Revengers.jpg" alt="Tokyo Revengers Vol. 1">
+                <h2>Tokyo Revengers Vol. 1</h2>
+                <p>R$20,34</p>
+                <button class="adicionar">Adicionar ao carrinho</button>
+            </fieldset>
+        </div>
+    </section>
+
+    <section>
+        <h1>Carrinho de Compras</h1>
+        <div id="carrinho"></div>
+        <ul id="lista-carrinho"></ul>
+        <p>Total: R$ <span id="total">0.00</span></p>
+        <button id="limpar-carrinho">Limpar Carrinho</button> 
+        <button id="finalizar-compra"> Finalizar Compras</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Lojinha Geek - Criado com carinho por Elizabete e Maria Clara. Todos os direitos reservados.</p>
+        <p>Desenvolvido especialmente para fãs de mangás e animes. Obrigado por apoiar nossa loja!</p>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const botoesAdicionar = document.querySelectorAll(".adicionar");
+            const listaCarrinho = document.getElementById("lista-carrinho");
+            const totalElemento = document.getElementById("total");
+            const botaoLimpar = document.getElementById("limpar-carrinho");
+            const botaoFinalizarCompra = document.getElementById("finalizar-compra");
+            let total = 0;
+
+           
+            botoesAdicionar.forEach(botao => {
+                botao.addEventListener("click", () => {
+                    const nome = botao.closest(".produto").getAttribute("data-nome");
+                    const preco = parseFloat(botao.closest(".produto").getAttribute("data-preco"));
+
+                   
+                    const item = document.createElement("li");
+                    item.textContent = `${nome} - R$ ${preco.toFixed(2)}`;
+                    listaCarrinho.appendChild(item);
+
+                   
+                    total += preco;
+                    totalElemento.textContent = total.toFixed(2);
+                });
+            });
+
+            botaoLimpar.addEventListener("click", () => {
+                listaCarrinho.innerHTML = "";
+                total = 0;
+                totalElemento.textContent = "0.00";
+            });
+
+          
+            botaoFinalizarCompra.addEventListener("click", () => {
+                if (total > 0) {
+                    alert(`Compra finalizada! Total a pagar: R$ ${total.toFixed(2)}`);
+                    listaCarrinho.innerHTML = "";
+                    total = 0;
+                    totalElemento.textContent = "0.00";
+                } else {
+                    alert("Seu carrinho está vazio. Adicione itens para finalizar a compra.");
+                }
+            });
+        });
+    </script>
 </body>
 </html>
